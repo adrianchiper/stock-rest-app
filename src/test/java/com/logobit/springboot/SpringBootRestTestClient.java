@@ -47,23 +47,15 @@ public class SpringBootRestTestClient {
         System.out.println("Location : "+uri.toASCIIString());
     }
  
-    /* PUT */
+    /* PUT for refill and buyout */
     private static void updateProduct() {
         System.out.println("Testing update Product API----------");
         RestTemplate restTemplate = new RestTemplate();
-        Product product  = new Product(1,"TV100",33, 70000);
+        Product product  = new Product(1,"TV1",100, 70000);
         restTemplate.put(REST_SERVICE_URI+"/product/1", product);
         System.out.println(product);
     }
     
-    /* PUT 2
-    private static void refillProduct() {
-        System.out.println("Testing update Product API----------");
-        RestTemplate restTemplate = new RestTemplate();
-        Product product  = new Product(1,"TV100",100, 70000);
-        restTemplate.put(REST_SERVICE_URI+"/product/1", product);
-        System.out.println(product);
-    }*/
  
     /* DELETE */
     private static void deleteProduct() {
@@ -86,7 +78,6 @@ public class SpringBootRestTestClient {
         createProduct();
         listAllProducts();
         updateProduct();
-   //     refillProduct();
         listAllProducts();
         deleteProduct();
         listAllProducts();
